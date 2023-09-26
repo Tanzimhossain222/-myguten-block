@@ -93,16 +93,46 @@ __webpack_require__.r(__webpack_exports__);
 const {
   registerBlockType
 } = wp.blocks;
+const {
+  RichText
+} = wp.blockEditor;
 registerBlockType('myguten/test-block', {
   title: 'Basic Example',
   icon: 'smiley',
   category: 'layout',
-  edit: ({
-    className
-  }) => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: className
-  }, "Hello World"),
-  save: () => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, "Hello World")
+  attributes: {
+    content: {
+      type: 'array',
+      source: 'children',
+      selector: 'p'
+    }
+  },
+  edit: props => {
+    const {
+      attributes: {
+        content
+      },
+      setAttributes,
+      className
+    } = props;
+    const onChangeContent = newContent => {
+      setAttributes({
+        content: newContent
+      });
+    };
+    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(RichText, {
+      tagName: "p",
+      className: className,
+      onChange: onChangeContent,
+      value: content
+    }));
+  },
+  save: props => {
+    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(RichText.Content, {
+      tagName: "p",
+      value: props.attributes.content
+    }));
+  }
 });
 }();
 /******/ })()
