@@ -6,6 +6,14 @@
  * Description: A Gutenberg plugin created via create-guten-block.
  * Author: Tanzim Hossain
  * Author URI: www.twitter.com/kdp_tanzim
+ * license: GPL-2.0-or-later
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ * Version: 1.0.0
+ * Version URI:
+ * Text Domain: myguten-block
+ * Domain Path: /languages
+ * 
+ * @package myguten-block
  */
 
 function my_custom_block_register_block()

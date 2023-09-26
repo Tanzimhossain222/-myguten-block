@@ -2,14 +2,30 @@
   "name": "myguten-block",
   "version": "1.0.0",
   "description": "Gutenberg Custom Block Plugin",
-  "main": "index.js",
-  "scripts": {
-    "dev": "wp-scripts start",
-    "build": "wp-scripts build"
-  },
   "author": "Tanzim",
-  "license": "ISC",
+  "license": "GPL-2.0-or-later",
+  "keywords": ["gutenberg","blocks","wordpress"],
+  "homepage": " https://github.com/code-BitLabs/myguten-block",
+  "repository": {"type": "git","url": "https://github.com/code-BitLabs/myguten-block"},
+  "bugs": {"url": "https://github.com/code-BitLabs/myguten-block/issues"},
+  "main": "index.js",
+  "dependencies": {
+    "@wordpress/eslint-plugin": "^16.0.0",
+    "prettier": "^3.0.3"
+  },
   "devDependencies": {
     "@wordpress/scripts": "26.13.0"
+  },
+  "scripts": {
+    "dev": "wp-scripts start",
+    "build": "wp-scripts build",
+    "check-engines": "wp-scripts check-engines",
+    "check-licenses": "wp-scripts check-licenses",
+    "lint:js": "wp-scripts lint-js",
+    "lint:js-fix": "wp-scripts lint-js --fix",
+    "lint:css": "wp-scripts lint-style",
+    "lint:css-fix": "wp-scripts lint-style --fix",
+    "lint:pkg-json": "wp-scripts lint-pkg-json"
   }
+
 }
